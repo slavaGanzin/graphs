@@ -7,11 +7,11 @@
     "build": "node_modules/.bin/esbuild --watch front/index.js --bundle --outfile=public/index.js"
   },
   "dependencies": {
-    "@projectstorm/react-diagrams": "^7.0.3",
     "mousetrap": "^1.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "valtio": "^1.11.3"
+    "reactflow": "11.9.2",
+    "zustand": "^4.4.4"
   },
   "devDependencies": {
     "chokidar": "^3.5.3",
