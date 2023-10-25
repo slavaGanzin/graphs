@@ -73,8 +73,14 @@ export const nodes = [
     data: {
       label: (
         <>
-          On the bottom left you see the <strong>Controls</strong> and the bottom right the{' '}
-          <strong>MiniMap</strong>. This is also just a node 🥳
+          On the bottom left you see the
+          {' '}
+          <strong>Controls</strong>
+          {' '}
+          and the bottom right the
+          {' '}
+          <strong>MiniMap</strong>
+          . This is also just a node 🥳
         </>
       ),
     },
@@ -85,8 +91,12 @@ export const nodes = [
 ];
 
 export const edges = [
-  { id: 'e1-2', source: '1', target: '2', label: 'this is an edge label' },
-  { id: 'e1-3', source: '1', target: '3', animated: true },
+  {
+    id: 'e1-2', source: '1', target: '2', label: 'this is an edge label',
+  },
+  {
+    id: 'e1-3', source: '1', target: '3', animated: true,
+  },
   {
     id: 'e4-5',
     source: '4',

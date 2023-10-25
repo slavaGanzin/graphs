@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { addEdge, applyNodeChanges, applyEdgeChanges } from 'reactflow';
 
-export default useStore = create((set, get) => ({
+const useStore = create((set, get) => ({
   history: [],
   index: -1,
   state: {
@@ -9,11 +9,11 @@ export default useStore = create((set, get) => ({
     edges: [],
   },
   updateNode: (id, data) => {
-    const nodes = get().state.nodes
-    nodes.find(x => x.id==id).data = data
-    get().setState({...get(), nodes})
+    const { nodes } = get().state;
+    nodes.find((x) => x.id === id).data = data;
+    get().setState({ ...get(), nodes });
   },
-  getNode: id => get().state.nodes.find(x => x.id ==id),
+  getNode: (id) => get().state.nodes.find((x) => x.id === id),
   setState: (newState) => {
     set((state) => {
       const currentIndex = state.index;
@@ -68,3 +68,5 @@ export default useStore = create((set, get) => ({
     });
   },
 }));
+
+export default useStore;
