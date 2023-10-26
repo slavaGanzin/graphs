@@ -1,15 +1,26 @@
 import React from 'react';
-import Flow from './Flow';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from 'react-router-dom';
+import FlowEdit from './page/Flow/FlowEdit';
+import FlowList from './page/Flow/FlowList';
 
-import useStore from './HistoryStore';
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <FlowList />,
+  },
+  {
+    path: '/flow/edit/:id',
+    element: <FlowEdit />,
+  },
+]);
 
-import demoScript from './demoScript';
-import FlowParser from './FlowParser';
-
-const App = function () {
-  const setState = useStore((x) => x.setState);
-  setState(FlowParser(demoScript));
-  return <Flow />;
-};
+function App() {
+  return <RouterProvider router={router} />;
+}
 
 export default App;

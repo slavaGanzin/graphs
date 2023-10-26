@@ -1,7 +1,7 @@
 require('fast-require')({
-  global:  true,
-  install:  true,
-})
+  global: true,
+  install: true,
+});
 
 function build() {
   esbuild.build({
@@ -9,10 +9,13 @@ function build() {
     bundle: true,
     outfile: './public/index.js',
     sourcemap: 'inline',
-  }).catch(e => nodeNotifier.notify(e.message))
+    define: {
+      ENV: process.env.NODE_ENV || '"mock-dev"',
+    },
+  }).catch((e) => nodeNotifier.notify(e.message));
 }
 
-build()
+build();
 
 chokidar.watch('front').on('change', build);
 
